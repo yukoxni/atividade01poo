@@ -1,9 +1,11 @@
-package atividade01;
-
 public class Calculadora {
+    private int numA;
+    private int numB;
 
-     int numA;
-     int numB;
+    public Calculadora(int numA, int numB) {
+        this.numA = numA;
+        this.numB = numB;
+    }
 
     public int somar() {
         return numA + numB;
@@ -17,8 +19,13 @@ public class Calculadora {
         return numA * numB;
     }
 
-    public int dividir() {    
-        return numA / numB;
+    public double dividir() {
+        if (numB != 0) {
+            return (double) numA / numB;
+        } else {
+            System.out.println("Erro: Divisao por zero.");
+            return Double.NaN;
+        }
     }
 
     public boolean verificarNumeroPrimo(int n) {
@@ -32,5 +39,4 @@ public class Calculadora {
         }
         return true;
     }
-
-    }
+}
